@@ -7,7 +7,9 @@
 
 const isPalindrome = (x) => {
   const str = x.toString().split("").reverse().join("");
-  return Number(str) === x ? true : false;
+  //   return Number(str) === x ? true : false;
+
+  return x === +x.toString().split("").reverse().join("");
 };
 
 console.log(isPalindrome(101));
