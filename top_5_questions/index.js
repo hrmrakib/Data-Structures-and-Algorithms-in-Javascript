@@ -5,8 +5,12 @@
 //  Input: -121 -----> Output: false
 //  Input: 10 -----> Output: false
 
-const isPalindrome = (x) => {};
+const isPalindrome = (x) => {
+  const str = x.toString().split("").reverse().join("");
+  return Number(str) === x ? true : false;
+};
 
+console.log(isPalindrome(101));
 // Ques-2: Armstrong number
 
 // Ques-3: Prime number
