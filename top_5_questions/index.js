@@ -5,64 +5,10 @@
 // Ques-7: Armstrong number in given range
 // Ques-8: Prime number in given range
 
-// Valid Angram
-// An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
-// Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+// Best time to buy and sell stock
+// You are given an array prices where prices[i] is the price of a given stock on the ith day.
+// You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+// Return the maximum profit, If you cannot achieve any profit, return 0.
 
-// Input: s = "anagram", t = "nagaram" -----> Output: true
-// Input: s = "rat", t = "car" -----> Output: false
-
-function isAnagram(s, t) {
-  if (s.length !== t.length) {
-    return false;
-  }
-
-  const sMap = {};
-
-  for (let i = 0; i < s.length; i++) {
-    sMap[s[i]] = (sMap[s[i]] || 0) + 1;
-  }
-
-  return sMap;
-
-  for (let i = 0; i < t.length; i++) {
-    if (!sMap[t[i]]) {
-      return false;
-    } else {
-      sMap[t[i]]--;
-    }
-  }
-
-  return true;
-}
-
-console.log(isAnagram("anagram", "nagaram"));
-console.log(isAnagram("bat", "tab"));
-
-// second way
-function isAnagram1(s, t) {
-  if (s.length !== t.length) {
-    return false;
-  }
-
-  const sMap = {};
-  const tMap = {};
-
-  for (let i = 0; i < s.length; i++) {
-    sMap[s[i]] = (sMap[s[i]] || 0) + 1;
-    tMap[t[i]] = (tMap[t[i]] || 0) + 1;
-  }
-
-  console.log(sMap, tMap);
-}
-
-isAnagram1("anagram", "nagaram");
-
-// another way
-const isAnagram2 = (s, t) => {
-  return s.split("").sort().join("") === t.split("").sort().join("");
-};
-
-// console.log(isAnagram2("anagram", "nagaram"));
-// console.log(isAnagram2("bat", "abt"));
-// console.log("fst".split("").sort().join(""), "tfs".split("").sort().join(""));
+// Input: prices = [7,1,5,3,6,4] -----> Output: 5
+// Input: prices = [7,6,4,3,1] -----> Output: 0
